@@ -1,0 +1,94 @@
+<ion-toolbar>
+  <ion-segment [value]="recoveryFerrousSulfate" #sg>
+    <ion-segment-button [value]="recoveryFerrousSulfate">
+      Recuperativo
+    </ion-segment-button>
+    <ion-segment-button [value]="preventiveFerrousSulfate">
+      Preventivo
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+<ion-content class="no-scroll">
+  <ion-grid class="fcb0" *ngIf="sg.value">
+    <ion-row>
+      <ion-col size="5" class="card">
+        <ion-card-subtitle (click)="addBirthConditionIndex(sg.value)"
+          >{{ sg.value.bc[sg.value.bcS].name }}</ion-card-subtitle
+        >
+        <ion-item>
+          <ion-label position="floating">mg | kg</ion-label>
+          <ion-input
+            type="number"
+            #currentDose
+            [value]="sg.value.bc[sg.value.bcS].quantityDose"
+          ></ion-input>
+          <span class="right">/ día</span>
+        </ion-item>
+      </ion-col>
+      <ion-col size="7" class="link-list fcci">
+        <ion-row
+          *ngFor="let pAge of sg.value.bc[sg.value.bcS].patientAge; index as i"
+          (click)="sg.value.paS = i"
+          [class.selected]="sg.value.paS === i"
+        >
+          <ion-col size="6">
+            <span>{{ pAge.ageRange }}</span>
+          </ion-col>
+          <ion-col size="6">
+            <span>Máximo {{ pAge.maximunDose }} mg/día</span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4" class="card">
+        <ion-item>
+          <ion-label position="floating">Peso</ion-label>
+          <ion-input
+            type="number"
+            #currentWeight
+            [value]="sg.value.bc[sg.value.bcS].averageWeight"
+          ></ion-input>
+          <span class="right">KG.</span>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4" class="frcc"> </ion-col>
+      <ion-col size="4" class="card">
+        <ion-item>
+          <ion-label position="floating">Mg</ion-label>
+          <ion-input
+            type="number"
+            [value]="currentDose.value * currentWeight.value"
+          ></ion-input>
+          <span class="right">/ día</span>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row
+      *ngFor="let medicine of sg.value.bc[sg.value.bcS].patientAge[sg.value.paS].medicines"
+    >
+      <ion-col size="6">
+        <div class="card">
+          <ion-card-subtitle>{{ medicine.name }}</ion-card-subtitle>
+          <span>1 {{ medicine.unit }} = {{ medicine.equivalent }} mg</span>
+        </div>
+      </ion-col>
+      <ion-col size="1" class="fccc"><div class="line"></div></ion-col>
+      <ion-col size="5">
+        <div class="card">
+          <ion-row>
+            <ion-col size="4" class="frcc">
+              {{ currentDose.value * currentWeight.value / medicine.equivalent |
+              number : '1.2-2' }}
+            </ion-col>
+            <ion-col size="8"> <span>gotas por día</span></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4" class="frcc">19</ion-col>
+            <ion-col size="8"> <span>frascos por mes</span></ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

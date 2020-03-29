@@ -36,6 +36,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'sulfato-ferroso',
+    loadChildren: () => import('./sulfato-ferroso/sulfato-ferroso.module').then( m => m.SulfatoFerrosoPageModule)
+  },
 ];
 
 @NgModule({
