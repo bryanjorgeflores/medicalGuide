@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Cadena de Frío
+    </ion-title>
+    <ion-buttons slot="end">
+        <ion-button id="notification-button" (click)="getPending()">
+          <ion-icon style="zoom: 2.0;" slot="icon-only" name="notifications"> </ion-icon>
+          <ion-badge id="notifications-badge" color="danger"
+            >{{alarmas}}</ion-badge
+          >
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list class="ion-padding">
+    <ion-item>
+      <ion-label color="tertiary">Turno</ion-label>
+      <ion-select
+        placeholder="Turno"
+        interface="action-sheet"
+        [(ngModel)]="_color"
+        (change)="_changeColors($event)"
+      >
+        <ion-select-option value="primary"
+          >Mañanas: 8.00 - 14.00</ion-select-option
+        >
+        <ion-select-option value="secondary"
+          >Tardes: 14.00 - 20.00</ion-select-option
+        >
+        <ion-select-option value="danger"
+          >Guardias: 8.00 - 20.00</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="tertiary">Repetir en un rango de (min):</ion-label>
+      <ion-select
+        placeholder="Minutos"
+        interface="action-sheet"
+        [(ngModel)]="repeticion"
+        required
+        (ionChange)="cambioMinutos()"
+      >
+        <ion-select-option *ngFor="let minute of minutes" [value]="minute"
+          >{{minute}} </ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-calendar
+    [(ngModel)]="date"
+    (change)="onChange($event)"
+    [options]="options"
+    type="time"
+    format="DD-MM-YYYY"
+  >
+  </ion-calendar>
+  <ion-button
+    class="ion-padding"
+    expand="block"
+    color="secondary"
+    (click)="modificarHoras()"
+    >Guardar</ion-button
+  >
+</ion-content>

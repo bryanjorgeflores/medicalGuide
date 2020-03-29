@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mayores de 5 años</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-expandable
+  [title]="'Esquema de Vacunación Mayores de 5 Años'"
+  [textColor]="'#FFF'"
+  [hasMargin]="false"
+  [headerColor]="'#000000'"
+  [expanded]="true"
+  [contentColor]="'#F9F9F9'"
+>
+<ion-grid>
+  <ion-row>
+    <ion-col style="background-color: #273c75; color: #fff;" size="3">Vacunas</ion-col>
+    <ion-col style="background-color: #273c75; color: #fff;" size="2">5-15 Años</ion-col>
+    <ion-col style="background-color: #273c75; color: #fff;" size="3">16-59 años (Población en riesgo)</ion-col>
+    <ion-col style="background-color: #273c75; color: #fff;" size="2">5-59 años</ion-col>
+    <ion-col style="background-color: #273c75; color: #fff;" size="2">60+(Al primer contacto)</ion-col>
+  </ion-row>
+</ion-grid>
+</app-expandable>
+</ion-content>

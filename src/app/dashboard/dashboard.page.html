@@ -1,0 +1,140 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="background-color: #ffc409;" size="5" class="ion-padding">
+        <ion-button
+          (click)="abrirVacunas('Inmunizaciones')"
+          expand="block"
+          fill="clear"
+          shape="round"
+          color="light"
+        >
+          Inmunizaciones
+        </ion-button>
+      </ion-col>
+      <ion-col size="7" style="background-color: #ffeaa7;">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" style="background-color: #d3a100;  color: #fff;" (click)="abrirSeccion('inmuniza-menores')">
+              Niños menores de 5 años
+            </ion-col>
+            <ion-col size="12" style="background-color: #e6b722;  color: #fff;" (click)="abrirSeccion('inmuniza-mayores')">
+              Niños mayores de 5 años
+            </ion-col>
+            <ion-col size="12" style="background-color: #d3a100;  color: #fff;" (click)="abrirSeccion('inmuniza-nina-adol')">
+              Niñas y adolescentes MEF y gestantes
+            </ion-col>
+            <ion-col size="12" style="background-color: #e6b722;  color: #fff;" (click)="abrirSeccion('inmuniza-pob-riesgo')">
+              Población en Riesgo
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="background-color: #5260ff;" size="5" class="ion-padding">
+        <ion-button
+          (click)="abrirSeccion('home')"
+          expand="block"
+          fill="clear"
+          shape="round"
+          color="light"
+        >
+          Cadena de Frío
+        </ion-button>
+      </ion-col>
+      <ion-col size="7" style="background-color: #a29bfe;" >
+        <br>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" style="background-color: #574afd; color:#fff;">
+              Calendario de Turnos
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="background-color: #eb445a;" size="5" class="ion-padding">
+        <ion-button
+          (click)="abrirVacunas('Sulfato Ferroso')"
+          expand="block"
+          fill="clear"
+          shape="round"
+          color="light"
+        >
+          Sulfato <br />
+          Ferroso
+        </ion-button>
+      </ion-col>
+      <ion-col size="7" style="background-color: #ff7675;">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="7" style="background-color: #ff6564; color: #fff;">
+              Preventivo
+            </ion-col>
+            <ion-col size="5" style="background-color: #e66767; color: #fff;">
+              Calcular
+            </ion-col>
+            <ion-col size="7" style="background-color: #e66767; color: #fff;">
+              Recuperativo
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="12" style="background-color: #e66767; color: #fff;">
+                    <p> ↳ Menores de 6 meses</p>
+                  </ion-col>
+                  <ion-col size="12" style="background-color: #e66767; color: #fff;">
+                    <p> ↳ De 6 meses a 11 años</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+            <ion-col size="5" style="background-color: #ff6564; color: #fff;">
+              Calcular
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="background-color: #9b59b6;" size="12" class="ion-padding">
+        <ion-button
+          (click)="abrirVacunas('Materno')"
+          expand="block"
+          fill="clear"
+          shape="round"
+          color="light"
+        >
+          Materno
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="background-color: #2c3e50;" size="12" class="ion-padding">
+        <ion-button
+          (click)="abrirVacunas('Normas Técnicas')"
+          expand="block"
+          fill="clear"
+          shape="round"
+          color="light"
+        >
+          Normas Técnicas
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

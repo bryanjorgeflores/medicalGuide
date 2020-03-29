@@ -1,0 +1,165 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{selector.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+  <app-expandable
+    [title]="'Tipo'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="true"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify">{{selector.kind}}</p>
+  </app-expandable>
+  <app-expandable
+    [title]="'Descripción'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify" *ngFor="let desc of selector.description">
+      {{desc}}
+    </p>
+  </app-expandable>
+  <app-expandable
+    [title]="'Composición'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify">{{selector.composition.subtitle}}</p>
+    <p
+      class="ion-text-justify"
+      style="padding-left: 10px;"
+      *ngFor="let list of selector.composition.list"
+    >
+    • {{list}}
+    </p>
+    <p class="ion-text-justify">{{selector.composition.type}}</p>
+  </app-expandable>
+  <app-expandable
+    [title]="'Presentación'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify" *ngFor="let present of selector.presentation">
+      • {{present}}
+    </p>
+  </app-expandable>
+  <app-expandable
+    [title]="'Indicaciones'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify" *ngFor="let indicacion of selector.indications">
+      {{indicacion}}
+    </p>
+  </app-expandable>
+  <app-expandable
+    [title]="'Esquema de Vacunación'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <ng-container *ngFor="let scheme of selector.scheme">
+      <p style="font-weight: bold;">{{scheme.condition}}</p>
+      <p *ngFor="let app of scheme.applications">{{app}}</p>
+      <p style="color: red">{{scheme.additional}}</p>
+      <hr />
+    </ng-container>
+  </app-expandable>
+  <app-expandable
+    [title]="'Dósis'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify">{{selector.dose}}</p>
+  </app-expandable>
+  <app-expandable
+    [title]="'Conservación de la Vacuna'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify">{{selector.conservation}} <br /></p>
+  </app-expandable>
+  <app-expandable
+    [title]="'Vía de Administración'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify" style="font-weight: bold;">
+      {{selector.administration.subtitle}}
+    </p>
+    <p
+      class="ion-text-justify"
+      *ngFor="let item of selector.administration.list"
+    >
+      {{item}}
+    </p>
+  </app-expandable>
+  <app-expandable
+    [title]="'Posibles Efectos Post Vacunales'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+  <ng-container *ngFor="let effect of selector.sideEffects">
+    <p class="ion-text-justify" style="font-weight: bold;">{{effect.subtitle}}</p>
+    <p
+      class="ion-text-justify"
+      style="padding-left: 10px;"
+      *ngFor="let item of effect.list"
+    >
+    • {{item}}
+    </p>
+  </ng-container>
+    
+  </app-expandable>
+  <app-expandable
+    [title]="'Contra Indicaciones'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify" *ngFor="let item of selector.contraindications">{{item}}</p>
+  </app-expandable>
+  <app-expandable
+    [title]="'Uso Simultáneo con otras Vacunas'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#ffc400'"
+    [expanded]="false"
+    [contentColor]="'#F9F9F9'"
+  >
+    <p class="ion-text-justify" >{{selector.simultaneousUse}}</p>
+  </app-expandable>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Menores de 5 años</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-expandable
+    [title]="'Niños menores de 1 año'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#000000'"
+    [expanded]="true"
+    [contentColor]="'#F9F9F9'"
+  >
+  <ion-grid>
+    <ion-row>
+      <ion-col style="background-color: #273c75; color: #fff;" size="4">Vacunas</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="4">Recién Nacido</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="1">2M</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="1">4M</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="1">6M</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="1">7M</ion-col>
+    </ion-row>
+  </ion-grid>
+  </app-expandable>
+  <app-expandable
+    [title]="'Niños y niñas de 1 año'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#000000'"
+    [expanded]="true"
+    [contentColor]="'#F9F9F9'"
+  >
+  <ion-grid>
+    <ion-row>
+      <ion-col style="background-color: #273c75; color: #fff;" size="4">Vacunas</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="3">12M</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="2">15M</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="3">18M</ion-col>
+    </ion-row>
+  </ion-grid>
+  </app-expandable>
+  <app-expandable
+    [title]="'Niños y niñas de 2 a 4 años'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#000000'"
+    [expanded]="true"
+    [contentColor]="'#F9F9F9'"
+  >
+  <ion-grid>
+    <ion-row>
+      <ion-col style="background-color: #273c75; color: #fff;" size="4">Vacunas</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="3">2 Años</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="2">3 años</ion-col>
+      <ion-col style="background-color: #273c75; color: #fff;" size="3">4 años</ion-col>
+    </ion-row>
+  </ion-grid>
+  </app-expandable>
+</ion-content>

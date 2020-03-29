@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Población en Riesgo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-expandable
+    [title]="'Vacunación en población en Riesgo'"
+    [textColor]="'#FFF'"
+    [hasMargin]="false"
+    [headerColor]="'#000000'"
+    [expanded]="true"
+    [contentColor]="'#F9F9F9'"
+  >
+    <ion-grid>
+      <ion-row>
+        <ion-col
+          style="background-color: #4cd137; color: #fff; text-align: center; padding-top: 9%;
+        "
+          size="4"
+          >Población</ion-col
+        >
+        <ion-col style="background-color: #273c75; color: #fff;" size="8">
+          <ion-grid>
+            <ion-row>
+              <ion-col
+                style="background-color: #273c75; color: #fff; text-align: center;"
+                size="12"
+              >
+                Vacunas
+              </ion-col>
+              <ion-col
+                style="background-color: #273c75; color: #fff; text-align: center;"
+                size="4"
+                >Influenza Adulto</ion-col
+              >
+              <ion-col
+                style="background-color: #273c75; color: #fff; text-align: center;"
+                size="4"
+                >dT Adulto</ion-col
+              >
+              <ion-col
+                style="background-color: #273c75; color: #fff; text-align: center;"
+                size="4"
+                >SR</ion-col
+              >
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </app-expandable>
+</ion-content>
